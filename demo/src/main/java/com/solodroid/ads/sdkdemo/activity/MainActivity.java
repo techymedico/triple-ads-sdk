@@ -44,6 +44,7 @@ import com.solodroid.ads.sdk.format.InterstitialAd;
 import com.solodroid.ads.sdk.format.NativeAd;
 import com.solodroid.ads.sdk.format.NativeAdView;
 import com.solodroid.ads.sdk.format.RewardedAd;
+import com.solodroid.ads.sdk.gdpr.GDPR;
 import com.solodroid.ads.sdk.util.OnRewardedAdCompleteListener;
 import com.solodroid.ads.sdk.util.OnRewardedAdDismissedListener;
 import com.solodroid.ads.sdk.util.OnRewardedAdErrorListener;
@@ -57,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     Toolbar toolbar;
     AdNetwork.Initialize adNetwork;
+    GDPR gdpr;
     BannerAd.Builder bannerAd;
     InterstitialAd.Builder interstitialAd;
     RewardedAd.Builder rewardedAd;
@@ -90,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
         bannerAdView.addView(View.inflate(this, R.layout.view_banner_ad, null));
 
         initAds();
+        loadGdpr();
         loadOpenAds();
         loadBannerAd();
         loadInterstitialAd();
@@ -132,6 +135,11 @@ public class MainActivity extends AppCompatActivity {
                 .setWortiseAppId(Constant.WORTISE_APP_ID)
                 .setDebug(BuildConfig.DEBUG)
                 .build();
+    }
+
+    private void loadGdpr() {
+        gdpr = new GDPR(this);
+        gdpr.updateGDPRConsentStatus(Constant.AD_NETWORK, false, false);
     }
 
     private void loadOpenAds() {

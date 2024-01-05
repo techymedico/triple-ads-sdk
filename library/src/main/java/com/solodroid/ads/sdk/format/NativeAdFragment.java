@@ -431,7 +431,7 @@ public class NativeAdFragment {
                             nativeAdLoader = new MaxNativeAdLoader(appLovinNativeId, activity);
                             nativeAdLoader.setNativeAdListener(new MaxNativeAdListener() {
                                 @Override
-                                public void onNativeAdLoaded(final MaxNativeAdView nativeAdView, final MaxAd ad) {
+                                public void onNativeAdLoaded(final MaxNativeAdView nativeAdView, @NonNull final MaxAd ad) {
                                     // Clean up any pre-existing native ad to prevent memory leaks.
                                     if (nativeAd != null) {
                                         nativeAdLoader.destroy(nativeAd);
@@ -455,13 +455,13 @@ public class NativeAdFragment {
                                 }
 
                                 @Override
-                                public void onNativeAdLoadFailed(final String adUnitId, final MaxError error) {
+                                public void onNativeAdLoadFailed(@NonNull final String adUnitId, @NonNull final MaxError error) {
                                     // We recommend retrying with exponentially higher delays up to a maximum delay
                                     loadBackupNativeAd();
                                 }
 
                                 @Override
-                                public void onNativeAdClicked(final MaxAd ad) {
+                                public void onNativeAdClicked(@NonNull final MaxAd ad) {
                                     // Optional click callback
                                 }
                             });
@@ -747,7 +747,7 @@ public class NativeAdFragment {
                             nativeAdLoader = new MaxNativeAdLoader(appLovinNativeId, activity);
                             nativeAdLoader.setNativeAdListener(new MaxNativeAdListener() {
                                 @Override
-                                public void onNativeAdLoaded(final MaxNativeAdView nativeAdView, final MaxAd ad) {
+                                public void onNativeAdLoaded(final MaxNativeAdView nativeAdView, @NonNull final MaxAd ad) {
                                     // Clean up any pre-existing native ad to prevent memory leaks.
                                     if (nativeAd != null) {
                                         nativeAdLoader.destroy(nativeAd);
@@ -771,12 +771,12 @@ public class NativeAdFragment {
                                 }
 
                                 @Override
-                                public void onNativeAdLoadFailed(final String adUnitId, final MaxError error) {
+                                public void onNativeAdLoadFailed(@NonNull final String adUnitId, @NonNull final MaxError error) {
                                     // We recommend retrying with exponentially higher delays up to a maximum delay
                                 }
 
                                 @Override
-                                public void onNativeAdClicked(final MaxAd ad) {
+                                public void onNativeAdClicked(@NonNull final MaxAd ad) {
                                     // Optional click callback
                                 }
                             });

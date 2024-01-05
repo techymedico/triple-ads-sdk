@@ -317,27 +317,27 @@ public class InterstitialAd {
                         maxInterstitialAd = new MaxInterstitialAd(appLovinInterstitialId, activity);
                         maxInterstitialAd.setListener(new MaxAdListener() {
                             @Override
-                            public void onAdLoaded(MaxAd ad) {
+                            public void onAdLoaded(@NonNull MaxAd ad) {
                                 retryAttempt = 0;
                                 Log.d(TAG, "AppLovin Interstitial Ad loaded...");
                             }
 
                             @Override
-                            public void onAdDisplayed(MaxAd ad) {
+                            public void onAdDisplayed(@NonNull MaxAd ad) {
                             }
 
                             @Override
-                            public void onAdHidden(MaxAd ad) {
+                            public void onAdHidden(@NonNull MaxAd ad) {
                                 maxInterstitialAd.loadAd();
                             }
 
                             @Override
-                            public void onAdClicked(MaxAd ad) {
+                            public void onAdClicked(@NonNull MaxAd ad) {
 
                             }
 
                             @Override
-                            public void onAdLoadFailed(String adUnitId, MaxError error) {
+                            public void onAdLoadFailed(@NonNull String adUnitId, @NonNull MaxError error) {
                                 retryAttempt++;
                                 long delayMillis = TimeUnit.SECONDS.toMillis((long) Math.pow(2, Math.min(6, retryAttempt)));
                                 new Handler().postDelayed(() -> maxInterstitialAd.loadAd(), delayMillis);
@@ -346,7 +346,7 @@ public class InterstitialAd {
                             }
 
                             @Override
-                            public void onAdDisplayFailed(MaxAd ad, MaxError error) {
+                            public void onAdDisplayFailed(@NonNull MaxAd ad, @NonNull MaxError error) {
                                 maxInterstitialAd.loadAd();
                             }
                         });
@@ -517,27 +517,27 @@ public class InterstitialAd {
                         maxInterstitialAd = new MaxInterstitialAd(appLovinInterstitialId, activity);
                         maxInterstitialAd.setListener(new MaxAdListener() {
                             @Override
-                            public void onAdLoaded(MaxAd ad) {
+                            public void onAdLoaded(@NonNull MaxAd ad) {
                                 retryAttempt = 0;
                                 Log.d(TAG, "AppLovin Interstitial Ad loaded...");
                             }
 
                             @Override
-                            public void onAdDisplayed(MaxAd ad) {
+                            public void onAdDisplayed(@NonNull MaxAd ad) {
                             }
 
                             @Override
-                            public void onAdHidden(MaxAd ad) {
+                            public void onAdHidden(@NonNull MaxAd ad) {
                                 maxInterstitialAd.loadAd();
                             }
 
                             @Override
-                            public void onAdClicked(MaxAd ad) {
+                            public void onAdClicked(@NonNull MaxAd ad) {
 
                             }
 
                             @Override
-                            public void onAdLoadFailed(String adUnitId, MaxError error) {
+                            public void onAdLoadFailed(@NonNull String adUnitId, @NonNull MaxError error) {
                                 retryAttempt++;
                                 long delayMillis = TimeUnit.SECONDS.toMillis((long) Math.pow(2, Math.min(6, retryAttempt)));
                                 new Handler().postDelayed(() -> maxInterstitialAd.loadAd(), delayMillis);
@@ -545,7 +545,7 @@ public class InterstitialAd {
                             }
 
                             @Override
-                            public void onAdDisplayFailed(MaxAd ad, MaxError error) {
+                            public void onAdDisplayFailed(@NonNull MaxAd ad, @NonNull MaxError error) {
                                 maxInterstitialAd.loadAd();
                             }
                         });
@@ -849,28 +849,28 @@ public class InterstitialAd {
                         maxInterstitialAd = new MaxInterstitialAd(appLovinInterstitialId, activity);
                         maxInterstitialAd.setListener(new MaxAdListener() {
                             @Override
-                            public void onAdLoaded(MaxAd ad) {
+                            public void onAdLoaded(@NonNull MaxAd ad) {
                                 retryAttempt = 0;
                                 Log.d(TAG, "AppLovin Interstitial Ad loaded...");
                             }
 
                             @Override
-                            public void onAdDisplayed(MaxAd ad) {
+                            public void onAdDisplayed(@NonNull MaxAd ad) {
                             }
 
                             @Override
-                            public void onAdHidden(MaxAd ad) {
+                            public void onAdHidden(@NonNull MaxAd ad) {
                                 maxInterstitialAd.loadAd();
                                 onInterstitialAdDismissedListener.onInterstitialAdDismissed();
                             }
 
                             @Override
-                            public void onAdClicked(MaxAd ad) {
+                            public void onAdClicked(@NonNull MaxAd ad) {
 
                             }
 
                             @Override
-                            public void onAdLoadFailed(String adUnitId, MaxError error) {
+                            public void onAdLoadFailed(@NonNull String adUnitId, @NonNull MaxError error) {
                                 retryAttempt++;
                                 long delayMillis = TimeUnit.SECONDS.toMillis((long) Math.pow(2, Math.min(6, retryAttempt)));
                                 new Handler().postDelayed(() -> maxInterstitialAd.loadAd(), delayMillis);
@@ -879,7 +879,7 @@ public class InterstitialAd {
                             }
 
                             @Override
-                            public void onAdDisplayFailed(MaxAd ad, MaxError error) {
+                            public void onAdDisplayFailed(@NonNull MaxAd ad, @NonNull MaxError error) {
                                 maxInterstitialAd.loadAd();
                             }
                         });
@@ -1053,28 +1053,28 @@ public class InterstitialAd {
                         maxInterstitialAd = new MaxInterstitialAd(appLovinInterstitialId, activity);
                         maxInterstitialAd.setListener(new MaxAdListener() {
                             @Override
-                            public void onAdLoaded(MaxAd ad) {
+                            public void onAdLoaded(@NonNull MaxAd ad) {
                                 retryAttempt = 0;
                                 Log.d(TAG, "AppLovin Interstitial Ad loaded...");
                             }
 
                             @Override
-                            public void onAdDisplayed(MaxAd ad) {
+                            public void onAdDisplayed(@NonNull MaxAd ad) {
                             }
 
                             @Override
-                            public void onAdHidden(MaxAd ad) {
+                            public void onAdHidden(@NonNull MaxAd ad) {
                                 maxInterstitialAd.loadAd();
                                 onInterstitialAdDismissedListener.onInterstitialAdDismissed();
                             }
 
                             @Override
-                            public void onAdClicked(MaxAd ad) {
+                            public void onAdClicked(@NonNull MaxAd ad) {
 
                             }
 
                             @Override
-                            public void onAdLoadFailed(String adUnitId, MaxError error) {
+                            public void onAdLoadFailed(@NonNull String adUnitId, @NonNull MaxError error) {
                                 retryAttempt++;
                                 long delayMillis = TimeUnit.SECONDS.toMillis((long) Math.pow(2, Math.min(6, retryAttempt)));
                                 new Handler().postDelayed(() -> maxInterstitialAd.loadAd(), delayMillis);
@@ -1082,7 +1082,7 @@ public class InterstitialAd {
                             }
 
                             @Override
-                            public void onAdDisplayFailed(MaxAd ad, MaxError error) {
+                            public void onAdDisplayFailed(@NonNull MaxAd ad, @NonNull MaxError error) {
                                 maxInterstitialAd.loadAd();
                             }
                         });
